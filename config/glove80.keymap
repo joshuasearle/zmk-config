@@ -23,7 +23,7 @@
         layer_td: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&mo LOWER>, <&to LOWER>;
         };
     };
