@@ -26,6 +26,16 @@
             tapping-term-ms = <250>;
             bindings = <&mo LOWER>, <&to LOWER>;
         };
+
+        thrm: thrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -67,12 +77,12 @@
 
         default_layer {
             bindings = <
-            &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                         &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
-            &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-            &kp TAB        &kp Q    &kp W       &kp F       &kp P       &kp B                                                                      &kp J   &kp L   &kp U       &kp Y       &kp SEMI    &kp BSLH
-            &kp ESC        &mt LALT A    &mt LGUI R       &mt LCTRL S       &mt LSHFT T       &kp G                                                                      &kp M   &mt RSHFT N   &mt RCTRL E       &mt LGUI I       &mt RALT O       &kp SQT
-            &kp GRAVE      &kp Z    &kp X       &kp C       &kp D       &kp V   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &kp RSHFT   &kp K   &kp H   &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
-            &mo MAGIC      &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp DEL     &kp LALT   &kp RALT  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
+            &kp F1     &kp F2        &kp F3        &kp F4         &kp F5                                                                                            &kp F6         &kp F7         &kp F8        &kp F9        &kp F10
+            &kp EQUAL  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5                                                                     &kp N6  &kp N7         &kp N8         &kp N9        &kp N0        &kp MINUS
+            &kp TAB    &kp Q         &kp W         &kp F          &kp P          &kp B                                                                      &kp J   &kp L          &kp U          &kp Y         &kp SEMI      &kp BSLH
+            &kp ESC    &thrm LALT A  &thrm LGUI R  &thrm LCTRL S  &thrm LSHFT T  &kp G                                                                      &kp M   &thrm RSHFT N  &thrm RCTRL E  &thrm LGUI I  &thrm RALT O  &kp SQT
+            &kp GRAVE  &kp Z         &kp X         &kp C          &kp D          &kp V   &kp LSHFT  &kp LCTRL  &layer_td    &kp LGUI  &kp RCTRL  &kp RSHFT  &kp K   &kp H          &kp COMMA      &kp DOT       &kp FSLH      &kp PG_UP
+            &mo MAGIC  &kp HOME      &kp END       &kp LEFT       &kp RIGHT              &kp BSPC   &kp DEL    &kp LALT     &kp RALT  &kp RET    &kp SPACE          &kp UP         &kp DOWN       &kp LBKT      &kp RBKT      &kp PG_DN
             >;
         };
 
