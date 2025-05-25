@@ -36,7 +36,8 @@
             bindings = <&kp LEFT_SHIFT>, <&kp TAB>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
         };
     };
 
