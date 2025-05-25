@@ -30,14 +30,24 @@
             flavor = "balanced";
         };
 
-        morphing_shift: morphing_shift {
+        shift_tab_morph: shift_tab_morph {
             compatible = "zmk,behavior-mod-morph";
-            label = "MORPHING_SHIFT";
+            label = "SHIFT_TAB_MORPH";
             bindings = <&kp LEFT_SHIFT>, <&kp TAB>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_LGUI|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        backspace_shift_tab_morph: backspace_shift_tab_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_SHIFT_TAB_MORPH";
+            bindings = <&lt 1 BACKSPACE>, <&kp LS(TAB)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
     };
 
@@ -52,10 +62,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W            &kp F            &kp P              &kp B              &kp J      &kp L         &kp U             &kp Y             &kp SEMI  &none
-&none  &kp A  &hrm LEFT_ALT R  &hrm LEFT_GUI S  &hrm LEFT_SHIFT T  &kp G              &kp M      &hrm RCTRL N  &hrm RIGHT_GUI E  &hrm RIGHT_ALT I  &kp O     &none
-&none  &kp Z  &kp X            &kp C            &kp D              &kp V              &kp K      &kp H         &kp COMMA         &kp DOT           &kp FSLH  &none
-                               &kp TAB          &lt 1 BACKSPACE    &morphing_shift    &kp SPACE  &kp DELETE    &kp ENTER
+&none  &kp Q  &kp W            &kp F            &kp P                       &kp B               &kp J      &kp L         &kp U             &kp Y             &kp SEMI  &none
+&none  &kp A  &hrm LEFT_ALT R  &hrm LEFT_GUI S  &hrm LEFT_SHIFT T           &kp G               &kp M      &hrm RCTRL N  &hrm RIGHT_GUI E  &hrm RIGHT_ALT I  &kp O     &none
+&none  &kp Z  &kp X            &kp C            &kp D                       &kp V               &kp K      &kp H         &kp COMMA         &kp DOT           &kp FSLH  &none
+                               &kp TAB          &backspace_shift_tab_morph  &shift_tab_morph    &kp SPACE  &kp DELETE    &kp ENTER
             >;
         };
 
