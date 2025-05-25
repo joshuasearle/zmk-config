@@ -49,6 +49,16 @@
             mods = <(MOD_LGUI|MOD_RGUI)>;
             keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
+
+        tab_tilda_morph: tab_tilda_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_TILDA_MORPH";
+            bindings = <&kp TAB>, <&kp GRAVE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
     };
 
     keymap {
@@ -62,10 +72,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W            &kp F            &kp P                       &kp B               &kp J      &kp L         &kp U             &kp Y             &kp SEMI  &none
-&none  &kp A  &hrm LEFT_ALT R  &hrm LEFT_GUI S  &hrm LEFT_SHIFT T           &kp G               &kp M      &hrm RCTRL N  &hrm RIGHT_GUI E  &hrm RIGHT_ALT I  &kp O     &none
-&none  &kp Z  &kp X            &kp C            &kp D                       &kp V               &kp K      &kp H         &kp COMMA         &kp DOT           &kp FSLH  &none
-                               &kp TAB          &backspace_shift_tab_morph  &shift_tab_morph    &kp SPACE  &kp DELETE    &kp ENTER
+&none  &kp Q  &kp W            &kp F             &kp P                       &kp B               &kp J      &kp L         &kp U             &kp Y             &kp SEMI  &none
+&none  &kp A  &hrm LEFT_ALT R  &hrm LEFT_GUI S   &hrm LEFT_SHIFT T           &kp G               &kp M      &hrm RCTRL N  &hrm RIGHT_GUI E  &hrm RIGHT_ALT I  &kp O     &none
+&none  &kp Z  &kp X            &kp C             &kp D                       &kp V               &kp K      &kp H         &kp COMMA         &kp DOT           &kp FSLH  &none
+                               &tab_tilda_morph  &backspace_shift_tab_morph  &shift_tab_morph    &kp SPACE  &kp DELETE    &kp ENTER
             >;
         };
 
