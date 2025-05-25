@@ -8,6 +8,38 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NEW_MACRO";
+        };
+    };
+
+    behaviors {
+        hrm: hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <1000>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <200>;
+            flavor = "balanced";
+        };
+
+        morphing_shift: morphing_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPHING_SHIFT";
+            bindings = <&kp LEFT_SHIFT>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -19,10 +51,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp F                   &kp P            &kp B        &kp J      &kp L       &kp U                 &kp Y    &kp SEMI  &none
-&none  &kp A  &kp R  &kp S                   &kp T            &kp G        &kp M      &kp N       &kp E                 &kp I    &kp O     &none
-&none  &kp Z  &kp X  &kp C                   &kp D            &kp V        &kp K      &kp H       &kp COMMA             &kp DOT  &kp FSLH  &none
-                     &mt LGUI LA(BACKSPACE)  &lt 1 BACKSPACE  &kp LSHFT    &kp SPACE  &kp DELETE  &mt RCTRL LA(DELETE)
+&none  &kp Q  &kp W            &kp F            &kp P              &kp B              &kp J      &kp L         &kp U             &kp Y             &kp SEMI  &none
+&none  &kp A  &hrm LEFT_ALT R  &hrm LEFT_GUI S  &hrm LEFT_SHIFT T  &kp G              &kp M      &hrm RCTRL N  &hrm RIGHT_GUI E  &hrm RIGHT_ALT I  &kp O     &none
+&none  &kp Z  &kp X            &kp C            &kp D              &kp V              &kp K      &kp H         &kp COMMA         &kp DOT           &kp FSLH  &none
+                               &kp TAB          &lt 1 BACKSPACE    &morphing_shift    &kp SPACE  &kp DELETE    &kp ENTER
             >;
         };
 
