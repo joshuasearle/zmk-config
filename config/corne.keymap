@@ -92,7 +92,7 @@
 
             bindings = <
 &none  &kp Q            &kp W         &kp F             &kp P                       &kp B               &kp J      &kp L         &kp U             &kp Y         &kp SEMI          &none
-&none  &hrm LEFT_ALT A  &hrm LCTRL R  &hrm LEFT_GUI S   &hrm LEFT_SHIFT T           &kp G               &kp M      &hrm RCTRL N  &hrm RIGHT_GUI E  &hrm RCTRL I  &hrm RIGHT_ALT I  &none
+&none  &hrm LEFT_ALT A  &hrm LCTRL R  &hrm LEFT_GUI S   &hrm LEFT_SHIFT T           &kp G               &kp M      &hrm RCTRL N  &hrm RIGHT_GUI E  &hrm RCTRL I  &hrm RIGHT_ALT O  &none
 &none  &kp Z            &kp X         &kp C             &kp D                       &kp V               &kp K      &kp H         &kp COMMA         &kp DOT       &kp FSLH          &none
                                       &tab_tilda_morph  &backspace_shift_tab_morph  &shift_tab_morph    &kp SPACE  &kp DELETE    &kp ENTER
             >;
@@ -100,10 +100,10 @@
 
         Navigation {
             bindings = <
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans  &trans        &trans        &trans        &trans        &trans          &trans        &kp DOWN      &kp UP        &trans        &trans        &trans
-&trans  &trans        &trans        &trans        &trans        &trans          &trans        &kp LEFT      &kp RIGHT     &trans        &trans        &trans
-                                    &trans        &trans        &trans          &trans        &trans        &trans
+&trans  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LG(NUMBER_4)  &kp LG(NUMBER_5)    &kp LG(NUMBER_6)  &kp LG(NUMBER_7)  &kp LG(NUMBER_8)  &kp LG(NUMBER_9)  &kp LG(NUMBER_0)  &trans
+&trans  &trans            &trans            &trans            &trans            &trans              &trans            &kp DOWN          &kp UP            &trans            &trans            &trans
+&trans  &trans            &trans            &trans            &trans            &trans              &trans            &kp LEFT          &kp RIGHT         &trans            &trans            &trans
+                                            &trans            &trans            &trans              &trans            &trans            &trans
             >;
         };
     };
